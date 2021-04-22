@@ -4,6 +4,7 @@ class User < ApplicationRecord
   # параметры работы модуля шифрования паролей
   ITERATIONS = 20_000
   DIGEST = OpenSSL::Digest::SHA256.new
+  USERNAME_CHECK = /\A\w+\z/
 
   attr_accessor :password
 
@@ -12,7 +13,10 @@ class User < ApplicationRecord
   validates :email, :username, presence: true
   validates :email, :username, uniqueness: true
   validates :password, confirmation: true, presence: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :username, length: { maximum: 40 }, format: { with: USERNAME_CHECK }
 
+  before_validation :check_username
   before_save :encrypt_password
 
   def self.hash_to_string(password_hash)
@@ -40,5 +44,9 @@ class User < ApplicationRecord
       # создаём хэш пароля - длинная уникальная строка, из которой невозможно восстановить пароль
       self.password_hash = User.hash_to_string(OpenSSL::PKCS5.pbkdf2_hmac(self.password, self.password_salt, ITERATIONS, DIGEST.length, DIGEST))
     end
+  end
+
+  def check_username
+    username.downcase! unless username.nil?
   end
 end
