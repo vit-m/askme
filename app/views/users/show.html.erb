@@ -37,6 +37,14 @@
 
 <div class="column-3-4">
   <div class="user-questions buffer-both">
+    <div class="question-content question-text">
+      <%= questions_count(@questions.size) %>
+    </div>
+  </div>
+</div>
+
+<div class="column-3-4">
+  <div class="user-questions buffer-both">
     <div class="questions-list">
       <% @questions.each do |question| %>
         <%= render partial: 'questions/question', object: question %>
