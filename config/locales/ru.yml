@@ -1,0 +1,7 @@
+ru:
+  questions:
+    show:
+      one: "1 вопрос"
+      few: "%{count} вопроса"
+      many: "%{count} вопросов"
+      other: "%{count} вопроса"
