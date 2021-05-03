@@ -37,9 +37,15 @@
 
 <div class="column-3-4">
   <div class="user-questions buffer-both">
-    <div class="question-content question-text">
-      <%= t 'questions.show', count: @questions.size %>
-    </div>
+      <div class="column-1-4 question-content question-text">
+        <%= t ('questions.show'), count: @questions.size %>
+      </div>
+      <div class="column-1-4 question-content question-text">
+        <%= t ('questions.answer'), count: 21 %>
+      </div>
+      <div class="column-1-4 question-content question-text">
+        <%= t ('questions.unanswer'), count: 25 %>
+      </div>
   </div>
 </div>
 

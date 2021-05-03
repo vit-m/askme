@@ -1,7 +1,17 @@
 ru:
   questions:
     show:
-      one: "1 вопрос"
+      one: "%{count} вопрос"
       few: "%{count} вопроса"
       many: "%{count} вопросов"
       other: "%{count} вопроса"
+    answer:
+      one: "%{count} отвеченный"
+      few: "%{count} отвеченных"
+      many: "%{count} отвеченных"
+      other: "%{count} отвеченных"
+    unanswer:
+      one: "%{count} неотвеченный"
+      few: "%{count} неотвеченных"
+      many: "%{count} неотвеченных"
+      other: "%{count} неотвеченных"
