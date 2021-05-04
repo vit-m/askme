@@ -45,10 +45,10 @@
         <%= t ('questions.show'), count: @questions.size %>
       </div>
       <div class="column-1-4 question-content question-text">
-        <%= t ('questions.answer'), count: 21 %>
+        <%= t ('questions.answer'), count: @questions_answered %>
       </div>
       <div class="column-1-4 question-content question-text">
-        <%= t ('questions.unanswer'), count: 25 %>
+        <%= t ('questions.unanswer'), count: @questions_unanswered %>
       </div>
   </div>
 </div>
