@@ -42,13 +42,13 @@
 <div class="column-3-4">
   <div class="user-questions buffer-both">
       <div class="column-1-4 question-content question-text">
-        <%= t ('questions.show'), count: @questions.size %>
+        <%= t('questions.show', count: @questions.size) %>
       </div>
       <div class="column-1-4 question-content question-text">
-        <%= t ('questions.answer'), count: @questions_answered %>
+        <%= t('questions.answer', count: @questions_answered) %>
       </div>
       <div class="column-1-4 question-content question-text">
-        <%= t ('questions.unanswer'), count: @questions_unanswered %>
+        <%= t('questions.unanswer', count: @questions_unanswered) %>
       </div>
   </div>
 </div>
