@@ -41,6 +41,8 @@ class UsersController < ApplicationController
   def show
     load_user
     @questions = @user.questions.order(created_at: :desc)
+    @questions_answered = @questions.answered.count
+    @questions_unanswered = @questions.unanswered.count
 
     @new_question = @user.questions.build
   end
