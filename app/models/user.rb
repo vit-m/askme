@@ -16,7 +16,7 @@ class User < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :username, length: { maximum: 40 }, format: { with: USERNAME_CHECK }
 
-  before_validation :check_username
+  before_validation :downcase_attributes
   before_save :encrypt_password
 
   def self.hash_to_string(password_hash)
@@ -46,7 +46,8 @@ class User < ApplicationRecord
     end
   end
 
-  def check_username
-    username.downcase! unless username.nil?
+  def downcase_attributes
+    username&.downcase!
+    email&.downcase!
   end
 end
