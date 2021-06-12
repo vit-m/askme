@@ -1,24 +1,11 @@
-# README
+# Ask-Ask
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Description
 
-Things you may want to cover:
+Social networking site where users create profiles and can send each other questions. Anonymous questions are also possible.
 
-* Ruby version
+reCAPTCHA is used to protect against spam.
 
-* System dependencies
+Implemented in Ruby 2.7.3, Rails 6.0.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Language: Russian.
